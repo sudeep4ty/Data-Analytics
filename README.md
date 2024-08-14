@@ -44,27 +44,7 @@ The repository is organized into two main folders to maintain clarity and organi
 
 - **Clustering_Analysis:** Contains all deliverables related to clustering analysis, including the optimal number of clusters, trained K-Means model, and visualizations with labels.
 
-## Video Demonstration
-A video demonstration has been created to walk through the key aspects of the project, including:
 
-- The preprocessed dataset
-- Training and testing sets
-- Scaling techniques applied
-- Determination of the optimal number of clusters
-- Training of the K-Means clustering model
-- Visualization and interpretation of clusters
-
-The video is approximately 10 to 15 minutes long and provides detailed explanations and insights. The video file is included in this repository.
-
-## Submission Instructions
-To submit this project:
-
-1. **GitHub/GitLab Repository:** 
-   - Ensure the repository is set to public or accessible to the project instructor.
-   - Submit the link to the repository.
-
-2. **Video Demonstration:** 
-   - Upload the video demonstration file or include a link to it in the repository.
 
 ## Project Timeline
 - **Assignment:** S2W8A2 - Stage 2 Deliverables
