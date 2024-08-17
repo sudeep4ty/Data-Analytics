@@ -45,12 +45,4 @@ The repository is organized into two main folders to maintain clarity and organi
 - **Clustering_Analysis:** Contains all deliverables related to clustering analysis, including the optimal number of clusters, trained K-Means model, and visualizations with labels.
 
 
-
-## Project Timeline
-- **Assignment:** S2W8A2 - Stage 2 Deliverables
-- **Due Date:** 08/18/2024
-- **Points Possible:** 40
-
----
-
 This README file outlines the deliverables for Stage 2 and provides clear instructions on how the project is structured and organized. For any questions or further information, please feel free to contact the project team.
