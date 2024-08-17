@@ -21,6 +21,15 @@ data.head()
 ```
 ## Step 2: Removing the duplicates
 We have removed the duplicates values almost 103 rows have the duplicate data rows which were removed at the first and then we proceed to the next step
+
+```python
+# Checking for duplicates in the dataset
+duplicate_count = data.duplicated().sum()
+print(f"Number of duplicate rows: {duplicate_count}")
+
+# Remove duplicates if any
+data = data.drop_duplicates()
+```
 ## Step 3: Checking for Missing Values
 After loading the dataset, it’s crucial to check for any missing values. Missing data can lead to biased or incorrect models, so identifying and handling these values is essential. We use the `isnull().sum()` function to count the number of missing values in each column of the dataset.
 
