@@ -29,17 +29,7 @@ missing_values = data.isnull().sum()
 # Display columns with missing values
 missing_values[missing_values > 0]
 ```
-## Step 3: Removing the duplicates
-We have removed the duplicates values almost 103 rows have the duplicate data rows which were removed at the first and then we proceed to the next step
 
-```python
-# Checking for duplicates in the dataset
-duplicate_count = data.duplicated().sum()
-print(f"Number of duplicate rows: {duplicate_count}")
-
-# Remove duplicates if any
-data = data.drop_duplicates()
-```
 ## Step 4: Handling Missing Values
 For columns with missing numerical data, we fill the missing values with the mean of that column. This approach ensures that the missing data does not skew the analysis, retaining the overall distribution of the data.
 
@@ -52,6 +42,17 @@ data.fillna({
 
 # Display the first few rows to confirm changes
 data.head()
+```
+## Step 4: Removing the duplicates
+We have removed the duplicates values almost 103 rows have the duplicate data rows which were removed at the first and then we proceed to the next step
+
+```python
+# Checking for duplicates in the dataset
+duplicate_count = data.duplicated().sum()
+print(f"Number of duplicate rows: {duplicate_count}")
+
+# Remove duplicates if any
+data = data.drop_duplicates()
 ```
 ## Step 5: Descriptive Statistics
 We calculate the mean, median, mode, and standard deviation for numerical columns to understand the distribution and spread of the data. Additionally, we check for skewness to assess the symmetry of the data distribution.
