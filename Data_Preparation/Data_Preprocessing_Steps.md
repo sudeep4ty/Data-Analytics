@@ -19,8 +19,9 @@ data = pd.read_csv('Dataset.csv')
 # Display the first few rows of the dataset
 data.head()
 ```
-
-## Step 2: Checking for Missing Values
+## Step 2: Removing the duplicates
+We have removed the duplicates values almost 103 rows have the duplicate data rows which were removed at the first and then we proceed to the next step
+## Step 3: Checking for Missing Values
 After loading the dataset, it’s crucial to check for any missing values. Missing data can lead to biased or incorrect models, so identifying and handling these values is essential. We use the `isnull().sum()` function to count the number of missing values in each column of the dataset.
 
 ```python
@@ -31,7 +32,7 @@ missing_values = data.isnull().sum()
 missing_values[missing_values > 0]
 ```
 
-## Step 3: Handling Missing Values
+## Step 4: Handling Missing Values
 For columns with missing numerical data, we fill the missing values with the mean of that column. This approach ensures that the missing data does not skew the analysis, retaining the overall distribution of the data.
 
 ```python
@@ -44,8 +45,16 @@ data.fillna({
 # Display the first few rows to confirm changes
 data.head()
 ```
+## Step 5: Descriptive Statistics
+We calculate the mean, median, mode, and standard deviation for numerical columns to understand the distribution and spread of the data. Additionally, we check for skewness to assess the symmetry of the data distribution.
+Results:
+    -The dataset has a significant number of non-senior citizens, with a small proportion of senior citizens contributing to the positive skew in SeniorCitizen.
+    -Customer tenures are fairly spread out, with a central tendency around 29-32 months, but a long tail of customers who have been with the service for much longer.
+    -Monthly charges are varied, with a mean slightly lower than the median, suggesting a few customers paying much less, pulling down the average.
 
-## Step 4: Encoding Categorical Variables
+
+
+## Step 6: Encoding Categorical Variables
 Machine learning models typically require numerical input, so we convert categorical variables into numerical format using one-hot encoding. This method creates binary columns for each category, making the data suitable for modeling.
 
 ```python
@@ -56,7 +65,7 @@ encoded_data = pd.get_dummies(data, drop_first=True)
 encoded_data.head()
 ```
 
-## Step 5: Splitting the Dataset into Training and Testing Sets
+## Step 7: Splitting the Dataset into Training and Testing Sets
 To evaluate the model's performance, we split the dataset into two parts: a training set and a testing set. The training set (80% of the data) is used to train the model, while the testing set (20%) is used to validate its performance on unseen data. This split is achieved using the `train_test_split` function.
 
 ```python
@@ -73,7 +82,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 X_train.shape, X_test.shape, y_train.shape, y_test.shape
 ```
 
-## Step 6: Scaling the Data
+## Step 8: Scaling the Data
 **Why Scaling is Necessary:** Scaling is crucial because different features in the dataset might have different units and scales. If one feature has a much larger scale than another, it can dominate distance-based calculations and skew the results of the model. Scaling ensures that each feature contributes equally to the model's predictions.
 
 We use standard scaling, where each feature is centered around zero and has a standard deviation of one. This normalization helps in improving the convergence speed of some algorithms and ensures that all features contribute equally.
@@ -96,7 +105,7 @@ X_test_scaled = pd.DataFrame(X_test_scaled, columns=X_test.columns)
 X_train_scaled.head()
 ```
 
-## Step 7: Saving the Preprocessed Data and Downloading the Files
+## Step 9: Saving the Preprocessed Data and Downloading the Files
 Finally, we save the preprocessed training and testing datasets as CSV files. These files can then be downloaded for further analysis or modeling. By saving the data, we ensure that the same cleaned and scaled data is used consistently throughout the project.
 
 ```python
