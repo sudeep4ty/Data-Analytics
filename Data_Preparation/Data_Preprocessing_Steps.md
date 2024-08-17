@@ -19,7 +19,17 @@ data = pd.read_csv('Dataset.csv')
 # Display the first few rows of the dataset
 data.head()
 ```
-## Step 2: Removing the duplicates
+## Step 2: Checking for Missing Values
+After loading the dataset, it’s crucial to check for any missing values. Missing data can lead to biased or incorrect models, so identifying and handling these values is essential. We use the `isnull().sum()` function to count the number of missing values in each column of the dataset.
+
+```python
+# Check for missing values in the dataset
+missing_values = data.isnull().sum()
+
+# Display columns with missing values
+missing_values[missing_values > 0]
+```
+## Step 3: Removing the duplicates
 We have removed the duplicates values almost 103 rows have the duplicate data rows which were removed at the first and then we proceed to the next step
 
 ```python
@@ -30,17 +40,6 @@ print(f"Number of duplicate rows: {duplicate_count}")
 # Remove duplicates if any
 data = data.drop_duplicates()
 ```
-## Step 3: Checking for Missing Values
-After loading the dataset, it’s crucial to check for any missing values. Missing data can lead to biased or incorrect models, so identifying and handling these values is essential. We use the `isnull().sum()` function to count the number of missing values in each column of the dataset.
-
-```python
-# Check for missing values in the dataset
-missing_values = data.isnull().sum()
-
-# Display columns with missing values
-missing_values[missing_values > 0]
-```
-
 ## Step 4: Handling Missing Values
 For columns with missing numerical data, we fill the missing values with the mean of that column. This approach ensures that the missing data does not skew the analysis, retaining the overall distribution of the data.
 
