@@ -1,7 +1,7 @@
 # Stage 2: Data Preparation and Clustering Analysis
 
 ## Overview
-This repository contains the deliverables for Stage 2 of the project, focusing on preparing the data for analysis and modeling, ensuring data integrity, and performing clustering analysis to identify distinct customer segments. The main objectives are to preprocess the dataset, split it into training and testing sets, apply scaling techniques, and conduct clustering analysis to extract meaningful insights.
+This repository contains the deliverables for Stage 2 of the project, focusing on preparing the data for analysis and modeling, ensuring data integrity, and performing clustering analysis to identify distinct customer segments. The main objectives are to preprocess the dataset, checking for duplicates, checking for missing values split it into training and testing sets, apply scaling techniques, and conduct clustering analysis to extract meaningful insights.
 
 ## Deliverables
 
@@ -9,6 +9,7 @@ This repository contains the deliverables for Stage 2 of the project, focusing o
 The data preparation phase is crucial for ensuring that the dataset is clean, structured, and ready for modeling. The following tasks have been completed:
 
 - **Preprocessed Dataset:** 
+  - addressed the duplication of the data into multiple rows and removed
   - Addressed missing data points.
   - Encoded categorical variables.
   - The cleaned and preprocessed dataset is available in the `Data_Preparation` folder.
